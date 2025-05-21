@@ -1,0 +1,7 @@
+api/venv
+api/.idea
+front/node_modules
+front/dist
+front/.angular
+front/.vscode
+**/__pycache__/

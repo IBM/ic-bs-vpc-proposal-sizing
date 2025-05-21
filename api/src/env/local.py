@@ -1,0 +1,2 @@
+APPID_ENDPOINT = ''
+AUTH=False

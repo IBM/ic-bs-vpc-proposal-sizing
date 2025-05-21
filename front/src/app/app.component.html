@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;700&display=swap">   
+
+<div id="header">
+  <div id="logo">
+     IBM <b>Cloud</b>
+  </div>
+</div>
+<div id="body">
+  <div id="menu">
+    <a *ngFor="let menuItem of menuItems" href="{{menuItem.link}}">{{menuItem.label}}</a>
+  </div>
+  <div id="body-page">
+    <div id="body-page-part-1">
+      <h2>{{title}}</h2>
+   </div>
+   <div id="body-page-part-2">
+    <router-outlet />
+    </div>
+  </div>
+</div>
+
+

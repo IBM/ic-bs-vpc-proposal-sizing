@@ -1,0 +1,54 @@
+
+  
+  <div class="row-disk">
+    Tier
+    <select [(ngModel)]="tierValue">
+       <option *ngFor="let tier of tiers" [value]="tier.value">{{ tier.label }}</option>
+    </select>
+  </div>
+  <div class="row-disk">
+     Size (TB)  
+    <input type="number" [(ngModel)]="sizeValue" />
+  </div>
+  <div class="row-disk">
+     IOPS
+     <input type="number" [(ngModel)]="IOPSValue" />
+  </div>
+  <div class="row-disk">
+     Throughput (GB/s)
+     <input type="number" [(ngModel)]="throughputValue" />
+  </div>
+  <div class="row-disk">
+    <span></span>
+    <button (click)="calculateDisks()">Calculate</button>
+ </div>
+ <div class="row-disk">
+  BS AVG <span style="text-align: right">{{avgBlockSize}} KB</span>
+</div>
+
+
+  <div>
+    <h2>Case 1</h2>
+    <ul>
+      <li *ngFor="let disk of disks.case1">
+        <strong>IOPS({{disks.bs}}KB):</strong> {{disk.iops_16KB}}, 
+        <strong>IOPS(BS_AVG):</strong> {{disk.iops_BS_AVG}}, 
+        <strong>Size:</strong> {{disk.size}} TB, 
+        <strong>Throughput:</strong> {{disk.throughput}} GB/s
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <h2>Case 2</h2>
+    <ul>
+      <li *ngFor="let disk of disks.case2">
+        <strong>IOPS({{disks.bs}}KB):</strong> {{disk.iops_16KB}}, 
+        <strong>IOPS(BS_AVG):</strong> {{disk.iops_BS_AVG}},  
+        <strong>Size:</strong> {{disk.size}} TB, 
+        <strong>Throughput:</strong> {{disk.throughput}} GB/s
+      </li>
+    </ul>
+  </div>  
+
+
