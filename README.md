@@ -2,7 +2,7 @@
 > IBM Legacy Public Repository Disclosure: All content in this repository including code has been provided by IBM under the associated open source software license and IBM is under no obligation to provide enhancements, updates, or support. IBM developers produced this code as an open source project (not as an IBM product), and IBM makes no assertions as to the level of quality nor security, and will not be maintaining this code going forward
 
 # Introduction
-This repository aims to implement the analytical method described in **TODO: ADD BLOG URL** for calculating the optimal configuration of block storage disks on a virtual machine within a VPC, to comply with given parameters of storage size, IOPS, and throughput. We will focus on custom block storage and tiers 3,5,10. Therefore, this repo will provide a python and angular application in this regard.
+This repository aims to implement the analytical method described in **[BLOG URL](https://developer.ibm.com/tutorials/awb-optimize-block-storage-cloud-vpc/)** for calculating the optimal configuration of block storage disks on a virtual machine within a VPC, to comply with given parameters of storage size, IOPS, and throughput. We will focus on custom block storage and tiers 3,5,10. Therefore, this repo will provide a python and angular application in this regard.
 
 > [!Important]
 > The proposed implementation are not officially endorsed by IBM. This is merely an analytical approach intended to assist in calculating block storage volumes. Consider it a starting point that should be adapted to your specific needs. In fact, slightly overprovisioning IOPS, size, or throughput in production environments may be a good practice—but doing so is entirely at your own discretion and responsibility.
@@ -35,9 +35,9 @@ curl -X POST localhost:5000/volumes \
     * custom
 
 # Deploy the frontend on your local environment
-Install node 18 and angular globally
+Install node 24 and angular globally
 ```bash
-nvm install 18
+nvm install 24
 npm install -g @angular/cli
 ```
 Install node modules
