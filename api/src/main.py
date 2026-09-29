@@ -3,7 +3,7 @@ from flask_cors import CORS, cross_origin
 
 from appid import AppID
 from utils import PROPERTIES
-from volumes import *
+from volumes import TIERS, volume
 
 app = Flask(__name__)
 CORS(app)
@@ -25,6 +25,8 @@ def volumes():
     body = request.get_json()
     if 'tier' not in body or 'thoughput' not in body or 'iops' not in body or 'size' not in body:
         return jsonify({'error': 'Request must be JSON'}), 400
+    if body['tier'] not in TIERS:
+        return jsonify({'error': 'Invalid tier'}), 400
     if not is_valid_access_token():
         return jsonify({'error': 'Invalid authorization'}), 401
     return volume(body['tier']).get(body['thoughput'], body['iops'], body['size']), 200
@@ -38,4 +40,4 @@ def token():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)
+    app.run(host='0.0.0.0')
